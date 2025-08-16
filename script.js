@@ -32,3 +32,18 @@ const appearOnScroll = new IntersectionObserver((entries, observer)=>{
   });
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
+// Current year in footer
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Animate sections when visible
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(
+  '.section, .card, .skill-card, .cert-card, .hero-content, .profile-wrapper, .socials a'
+).forEach(el => observer.observe(el));
