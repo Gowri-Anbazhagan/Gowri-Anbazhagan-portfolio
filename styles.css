@@ -267,3 +267,61 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+.container {
+  width: 90%;   /* instead of 1200px */
+  max-width: 1200px;
+  margin: auto;
+}
+.hero {
+  display: flex;
+  flex-direction: column;  /* stack on mobile */
+  align-items: center;
+  padding: 20px;
+}
+/* For tablets */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 18px;
+  }
+}
+
+/* For mobiles */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
