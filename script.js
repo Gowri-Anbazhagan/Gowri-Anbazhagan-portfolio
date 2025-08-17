@@ -18,7 +18,7 @@
     messages.push({ ...data, at: new Date().toISOString() });
     localStorage.setItem('messages', JSON.stringify(messages));
     form.reset();
-    alert('Thanks! Your message has been saved locally. Replace with real backend later.');
+    alert('Thanks! Your message has been saved.click on ok! Message will be send');
   });
 })();
 const faders = document.querySelectorAll(".fade-in");
